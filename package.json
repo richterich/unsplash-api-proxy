@@ -1,0 +1,23 @@
+{
+  "name": "unsplash-api-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "main": "./src/index.mjs",
+  "scripts": {
+    "start": "node --experimental-modules ./src/index.mjs",
+    "debug": "node --inspect --experimental-modules ./src/index.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Richterich <richterich@yahoo.com> (https://richterich.dev)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "unsplash-js": "^7.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "prettier": "^2.2.1"
+  }
+}
