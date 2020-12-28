@@ -3,27 +3,27 @@ import { createApi } from 'unsplash-js';
 
 const unsplash = createApi(unsplashConfig);
 
-function sendRandomPhoto(response) {
-    unsplash.photos
+function fetchRandomPhoto(query) {
+    return unsplash.photos
         .getRandom({
-            query: 'abstract',
-            orientation: 'landscape',
+            query: query.searchterm,
+            orientation: query.orientation,
         })
         .then((result) => {
             if (result.errors) {
-                response.send(result.errors);
+                throw result.errors;
             }
-            const photo = result.response;
-            response.send({
-                description: photo.description,
-                background: photo.urls.regular,
-                username: photo.user.username,
-                profile_url: photo.user.links.html,
-            });
+            const randomPhoto = result.response;
+            return {
+                description: randomPhoto.description,
+                background: randomPhoto.urls[query.size],
+                username: randomPhoto.user.username,
+                profile_url: randomPhoto.user.links.html,
+            };
         })
         .catch((err) => {
-            response.send(err);
+            throw err;
         });
 }
 
-export { sendRandomPhoto };
+export { fetchRandomPhoto };
