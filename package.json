@@ -12,6 +12,7 @@
   "author": "Alexander Richterich <richterich@yahoo.com> (https://richterich.dev)",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "unsplash-js": "^7.0.2"
