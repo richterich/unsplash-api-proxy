@@ -7,4 +7,4 @@ const host = process.env.ADDRESS;
 const server = http.createServer(routing);
 server.listen(port, host);
 
-console.log(`Server is run at https://${host}:${port}`);
+console.log(`Server is run at http://${host}:${port}`);
