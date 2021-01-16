@@ -3,6 +3,7 @@ build
 *.md
 npm-debug.log
 .gitignore
+.git
 .env
 .eslintrc.yml
 .idea
