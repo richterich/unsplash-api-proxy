@@ -1,4 +1,4 @@
-FROM node:12.16.3-alpine
+FROM node:12.20.0-alpine
 
 ARG WORKDIR_PATH
 ARG PORT
