@@ -1,0 +1,18 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./
+      args:
+        PORT: ${EXPOSE_PORT}
+    networks:
+      domain_net:
+        ipv4_address: 192.168.220.20
+    environment:
+      PORT: ${PORT_PROD}
+      ADDRESS: ${ADDRESS_PROD}
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN_PROD}
+      UNSPLASH_ACCESS_KEY: ${UNSPLASH_ACCESS_KEY}
+networks:
+  domain_net:
+    external: true
